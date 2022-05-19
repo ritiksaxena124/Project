@@ -1,0 +1,84 @@
+import React from "react";
+import styled from "styled-components";
+function Navbar() {
+  return (
+    <>
+      <Wrapper>
+        <LogoContainer>
+          <Logo>StudySpace</Logo>
+        </LogoContainer>
+        <NavMenuWrapper>
+          <NavMenu>
+            <NavMenuItems>
+              <Items>Home</Items>
+              <Items>Courses</Items>
+              <Items>Blog</Items>
+              <Items>Practice</Items>
+              <Items>Contact us</Items>
+            </NavMenuItems>
+          </NavMenu>
+          <NavButtons>
+            <LoginBtn>Login</LoginBtn>
+            <SignupBtn>Signup</SignupBtn>
+          </NavButtons>
+        </NavMenuWrapper>
+      </Wrapper>
+    </>
+  );
+}
+
+export default Navbar;
+
+const Wrapper = styled.div`
+  margin: 10px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+`;
+const LogoContainer = styled.div``;
+const Logo = styled.h2`
+  color: #005656;
+  font-size: 30px;
+`;
+const NavMenuWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+`;
+
+const NavMenu = styled.div``;
+const NavMenuItems = styled.ul`
+  display: flex;
+`;
+const Items = styled.p`
+  cursor: pointer;
+  padding: 3px 5px;
+  margin-right: 15px;
+  padding: 8.5px 10px;
+`;
+
+const NavButtons = styled.div`
+  display: flex;
+  margin: 20px 15px;
+
+`;
+const LoginBtn = styled.p`
+  cursor: pointer;
+  padding: 3px 5px;
+  background: #0c4d4d;
+  padding: 8.5px 19px;
+  color: #ffff;
+  border-radius: 6px;
+  margin-right: 10px;
+  
+`;
+const SignupBtn = styled.p`
+  cursor: pointer;
+  background: #0c4d4d;
+  padding: 8px 15px;
+  color: #ffff;
+  border-radius: 6px;
+  margin-right: 10px;
+
+`;
