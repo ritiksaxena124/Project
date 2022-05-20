@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "@mui/material/Button";
+
 function Navbar() {
   return (
     <>
@@ -30,7 +32,7 @@ function Navbar() {
 export default Navbar;
 
 const Wrapper = styled.div`
-  margin: 10px 70px;
+  padding: 0px 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,24 +63,26 @@ const Items = styled.p`
 const NavButtons = styled.div`
   display: flex;
   margin: 20px 15px;
-
 `;
-const LoginBtn = styled.p`
-  cursor: pointer;
-  padding: 3px 5px;
-  background: #0c4d4d;
-  padding: 8.5px 19px;
-  color: #ffff;
-  border-radius: 6px;
-  margin-right: 10px;
-  
-`;
-const SignupBtn = styled.p`
-  cursor: pointer;
-  background: #0c4d4d;
-  padding: 8px 15px;
-  color: #ffff;
-  border-radius: 6px;
-  margin-right: 10px;
 
+
+const LoginBtn = styled(Button)`
+  font-size: 15px !important;
+  background: #0c4d4d !important;
+  margin-top: 10px !important;
+  padding: 3px 15px !important;
+  color: #ffff !important;
+  margin-right: 10px !important;
+  text-transform: none !important;
+`;
+
+
+const SignupBtn = styled(Button)`
+  font-size: 15px !important;
+  background: #9ca3af5e !important;
+  margin-top: 10px !important;
+  padding: 3px 15px !important;
+  color: black !important;
+  margin-right: 10px !important;
+  text-transform: none !important;
 `;
