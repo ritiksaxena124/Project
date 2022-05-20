@@ -1,27 +1,44 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <>
       <Wrapper>
         <LogoContainer>
-          <Logo>StudySpace</Logo>
+          <Link to="/">
+            <Logo>StudySpace</Logo>
+          </Link>
         </LogoContainer>
         <NavMenuWrapper>
           <NavMenu>
             <NavMenuItems>
-              <Items>Home</Items>
-              <Items>Courses</Items>
-              <Items>Blog</Items>
-              <Items>Practice</Items>
-              <Items>Contact us</Items>
+              <Link to="/">
+                <Items>Home</Items>
+              </Link>
+              <Link to="/courses">
+                <Items>Courses</Items>
+              </Link>
+              <Link to="/blogs">
+                <Items>Blog</Items>
+              </Link>
+              <Link to="/practice">
+                <Items>Practice</Items>
+              </Link>
+              <Link to="/contact">
+                <Items>Contact us</Items>
+              </Link>
             </NavMenuItems>
           </NavMenu>
           <NavButtons>
-            <LoginBtn>Login</LoginBtn>
-            <SignupBtn>Signup</SignupBtn>
+            <Link to="login">
+              <LoginBtn>Login</LoginBtn>
+            </Link>
+            <Link to="signup">
+              <SignupBtn>Signup</SignupBtn>
+            </Link>
           </NavButtons>
         </NavMenuWrapper>
       </Wrapper>
@@ -42,6 +59,7 @@ const LogoContainer = styled.div``;
 const Logo = styled.h2`
   color: #005656;
   font-size: 30px;
+  font-weight: 900;
 `;
 const NavMenuWrapper = styled.div`
   display: flex;
@@ -65,7 +83,6 @@ const NavButtons = styled.div`
   margin: 20px 15px;
 `;
 
-
 const LoginBtn = styled(Button)`
   font-size: 15px !important;
   background: #0c4d4d !important;
@@ -75,7 +92,6 @@ const LoginBtn = styled(Button)`
   margin-right: 10px !important;
   text-transform: none !important;
 `;
-
 
 const SignupBtn = styled(Button)`
   font-size: 15px !important;

@@ -4,6 +4,8 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
+  text-decoration: none;
+  color: black;
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
