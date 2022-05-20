@@ -29,6 +29,15 @@ const Container = styled.div`
   border: 1px solid green;
   border-radius: 7px;
   background: #ffff;
+  @media screen and (max-width: 1400px) {
+  }
+  @media screen and (max-width: 1000px) {
+  }
+  @media screen and (max-width: 700px) {
+  }
+  @media screen and (max-width: 450px) {
+
+  }
 `;
 const ImageContainer = styled.div`
   width: 100%;
@@ -44,10 +53,12 @@ const Image = styled.img`
 `;
 const Info = styled.div`
   padding: 20px 15px 15px 15px;
+
 `;
 const CourseName = styled.p`
   font-size: 20px;
   font-weight: bold;
+
 `;
 const Desc = styled.p`
   font-size: 13px;

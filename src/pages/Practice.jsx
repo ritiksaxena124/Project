@@ -7,7 +7,7 @@ function Practice() {
     <Wrapper>
       <Container>
         <Heading>Practice your learnings</Heading>
-        <CoursesSectionContainer>
+        <PracticeSectionContainer>
           <PracticeCard />
 
           <PracticeCard />
@@ -22,7 +22,7 @@ function Practice() {
           <PracticeCard />
           <PracticeCard />
           <PracticeCard />
-        </CoursesSectionContainer>
+        </PracticeSectionContainer>
       </Container>
     </Wrapper>
   );
@@ -39,7 +39,12 @@ margin-top: 50px;
   background-attachment: fixed;
   background-repeat: no-repeat;
 `;
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
 
 const Heading = styled.h2`
   text-align: center;
@@ -48,10 +53,26 @@ const Heading = styled.h2`
   text-transform: capitalize;
 `;
 
-const CoursesSectionContainer = styled.div`
+const PracticeSectionContainer = styled.div`
   margin-top: 20px;
   display: grid;
   place-items: center;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
+
+  @media screen and (max-width: 1400px) {
+    margin-top: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 7px;
+  }
+  @media screen and (max-width: 1000px) {
+    margin-top: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7px;
+  }
+  @media screen and (max-width: 700px) {
+    margin-top: 10px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 7px;
+  }
 `;

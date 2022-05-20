@@ -42,6 +42,7 @@ const Form = styled.div`
 
 const Heading = styled.h1`
   text-align: center;
+  color: #0C4D4D;
 `;
 const InputName = styled(TextField)`
   margin-top: 15px !important;
