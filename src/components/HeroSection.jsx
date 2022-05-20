@@ -39,6 +39,8 @@ const Wrapper = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  text-transform: capitalize;
+
   @media screen and (max-width: 1450px) {
     background: url(${TabletHerobg});
     background-size: cover;
