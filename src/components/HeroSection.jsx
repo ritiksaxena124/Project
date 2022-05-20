@@ -71,9 +71,12 @@ const ContentBox = styled.div`
 const Heading = styled.h1`
   font-size: 50px;
   display: flex;
+  font-weight: 300;
   p {
     margin-left: 12px;
     color: #0c4d4d;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
   }
 
   @media screen and (max-width: 1450px) {
@@ -95,9 +98,8 @@ const Buttons = styled.div`
   margin-top: 30px;
 `;
 
-
 const CoursesBtn = styled(Button)`
- font-size: 15px !important;
+  font-size: 15px !important;
   background: #0c4d4d !important;
   margin-top: 10px !important;
   padding: 3px 15px !important;
@@ -107,7 +109,6 @@ const CoursesBtn = styled(Button)`
 `;
 
 const BlogsBtn = styled(Button)`
-
   font-size: 15px !important;
   background: #9ca3af5e !important;
   margin-top: 10px !important;
