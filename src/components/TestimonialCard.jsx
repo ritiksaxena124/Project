@@ -30,6 +30,7 @@ const Container = styled.div`
   padding: 10px 20px;
   min-width: 450px;
   border-radius: 7px;
+  
 `;
 const QuotesContainer = styled.div`
   width: 40px;

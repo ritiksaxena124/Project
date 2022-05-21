@@ -22,6 +22,8 @@ function PracticeCard() {
 export default PracticeCard;
 const Wrapper = styled.div`
   margin: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
 `;
 const Container = styled.div`
   width: 300px;
