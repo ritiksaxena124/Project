@@ -14,30 +14,28 @@ const Sidebar = ({ action }) => {
           </LogoContainer>
           <MenuItemsContainer>
             <ItemsList>
-              <Items>
-                <Link to="/">
-                  <Item>Home</Item>
-                </Link>
-                <Link to="/courses">
-                  <Item>Courses</Item>
-                </Link>
-                <Link to="/blogs">
-                  <Item>Blog</Item>
-                </Link>
-                <Link to="/practice">
-                  <Item>Practice</Item>
-                </Link>
-                <Link to="/contact">
-                  <Item>Contact us</Item>
-                </Link>
-              </Items>
+              <Link to="/">
+                <Item>Home</Item>
+              </Link>
+              <Link to="/courses">
+                <Item>Courses</Item>
+              </Link>
+              <Link to="/blogs">
+                <Item>Blog</Item>
+              </Link>
+              <Link to="/practice">
+                <Item>Practice</Item>
+              </Link>
+              <Link to="/contact">
+                <Item>Contact us</Item>
+              </Link>
             </ItemsList>
           </MenuItemsContainer>
           <NavButtons>
-            <Link to="login">
+            <Link to="/login">
               <LoginBtn>Login</LoginBtn>
             </Link>
-            <Link to="signup">
+            <Link to="/signup">
               <SignupBtn>Signup</SignupBtn>
             </Link>
           </NavButtons>
@@ -63,9 +61,9 @@ const Container = styled.div`
   transform: ${(props) =>
     props.action ? "translateX(-80px)" : "translateX(-500px)"};
 
-@media screen and (max-width: 450px) {
-  transform: ${(props) =>
-    props.action ? "translateX(-10px)" : "translateX(-400px)"};
+  @media screen and (max-width: 450px) {
+    transform: ${(props) =>
+      props.action ? "translateX(-10px)" : "translateX(-400px)"};
   }
 `;
 
@@ -81,10 +79,6 @@ const LogoContainer = styled.div`
   width: 100px;
   height: 100px;
   margin: 10px;
-  @media screen and (max-width: 450px) {
-    width: 50px;
-    height: 50px;
-  }
 `;
 const Logo = styled.img`
   height: 100%;
@@ -98,29 +92,23 @@ const MenuItemsContainer = styled.div`
   margin-top: 20px;
 `;
 const ItemsList = styled.ul``;
-const Items = styled.li`
-  list-style: none;
-  transition: 0.5s;
-  text-align: center;
-  border-radius: 5px;
-  cursor: pointer;
-  
-`;
 const Item = styled.p`
   position: relative;
-  text-transform: capitalize;
   font-weight: 900;
+  text-transform: capitalize;
   letter-spacing: 2px;
   font-size: 1em;
-  cursor: pointer;
   color: #111111;
   padding: 10px 12px;
-  margin: 10px;
+  margin-top: 20px;
+  border-radius: 3;
+  border-bottom: 1px solid #0c4c4c;
+  text-align: center;
+  cursor: pointer;
 `;
 
-
 const NavButtons = styled.div`
-margin-top: 20px;
+  margin: 100px 10px;
 `;
 
 const LoginBtn = styled(Button)`
