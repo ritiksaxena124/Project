@@ -28,9 +28,8 @@ const Container = styled.div`
   flex-direction: column;
   background-color: #eefff7;
   padding: 10px 20px;
-  min-width: 450px;
+  width: 100%;
   border-radius: 7px;
-  
 `;
 const QuotesContainer = styled.div`
   width: 40px;
@@ -44,6 +43,9 @@ const Message = styled.p`
   margin-top: 10px;
   font-size: 15px;
   line-height: 25px;
+  @media screen and (max-width: 450px) {
+   font-size: 12px;
+  }
 `;
 const Name = styled.p`
   margin-top: 10px;
