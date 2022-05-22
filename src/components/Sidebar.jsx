@@ -94,8 +94,8 @@ const MenuItemsContainer = styled.div`
 const ItemsList = styled.ul``;
 const Item = styled.p`
   position: relative;
-  text-transform: capitalize;
   font-weight: 900;
+  text-transform: capitalize;
   letter-spacing: 2px;
   font-size: 1em;
   color: #111111;
