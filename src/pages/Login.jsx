@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import { TextField } from "@mui/material";
 import Bg from "../images/Login/bg.png";
 import LoginImg from "../images/Login/login.jpg";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 function Login() {
   return (
     <Container>
@@ -31,8 +31,8 @@ function Login() {
           <CreateAccount>
             Doesn't have an account?
             <Link to="/signup">
-             <span>Signup</span>
-             </Link>
+              <span>Signup</span>
+            </Link>
           </CreateAccount>
         </FormContainer>
       </LoginContainer>
