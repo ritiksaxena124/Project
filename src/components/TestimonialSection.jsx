@@ -30,6 +30,9 @@ const Heading = styled.h2`
   text-align: center;
   color: #005656;
   font-size: 30px;
+  @media screen and (max-width: 450px) {
+   font-size: 25px;
+  }
 `;
 
 const TestimonialContainer = styled.div`
@@ -38,4 +41,8 @@ padding-top: 20px;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   place-items: center;
+
+  @media screen and (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
 `;

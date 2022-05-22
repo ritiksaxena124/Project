@@ -31,6 +31,9 @@ const Heading = styled.h2`
   text-align: center;
   color: #005656;
   font-size: 30px;
+  @media screen and (max-width: 450px) {
+   font-size: 25px;
+  }
 `;
 const DevelopersCardContainer = styled.div`
   display: flex;

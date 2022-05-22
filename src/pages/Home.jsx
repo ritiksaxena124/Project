@@ -21,6 +21,7 @@ function Home() {
 }
 
 export default Home;
+
 const Wrapper = styled.div``;
 const Container = styled.div`
   padding: 0px 70px;
@@ -29,4 +30,8 @@ const Container = styled.div`
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  @media screen and (max-width: 450px) {
+    padding: 0px 10px;
+    background: none;
+  }
 `;

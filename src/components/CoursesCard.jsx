@@ -28,7 +28,6 @@ const Wrapper = styled.div`
 const Container = styled.div`
   width: 300px;
   min-height: 300px;
-  border: 1px solid green;
   border-radius: 7px;
   background: #ffff;
   @media screen and (max-width: 1400px) {

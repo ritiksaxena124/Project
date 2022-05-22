@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-
+import MenuBtn from "./MenuBtn";
 function Navbar() {
   return (
     <>
@@ -12,8 +12,8 @@ function Navbar() {
             <Logo>StudySpace</Logo>
           </Link>
         </LogoContainer>
-        <NavMenuWrapper>
-          <NavMenu>
+        {/* <NavMenuWrapper> */}
+          {/* <NavMenu>
             <NavMenuItems>
               <Link to="/">
                 <Items>Home</Items>
@@ -39,8 +39,9 @@ function Navbar() {
             <Link to="signup">
               <SignupBtn>Signup</SignupBtn>
             </Link>
-          </NavButtons>
-        </NavMenuWrapper>
+          </NavButtons> */}
+          <MenuBtn/>
+        {/* </NavMenuWrapper> */}
       </Wrapper>
     </>
   );
@@ -54,12 +55,18 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid black;
+  @media screen and (max-width: 450px) {
+   padding: 15px 10px;
+  }
 `;
 const LogoContainer = styled.div``;
 const Logo = styled.h2`
   color: #005656;
   font-size: 30px;
   font-weight: 900;
+  @media screen and (max-width: 450px) {
+   font-size: 25px;
+  }
 `;
 
 const NavMenuWrapper = styled.div`

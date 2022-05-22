@@ -3,6 +3,7 @@ import styled from "styled-components";
 import HeroBg from "../images/herobg.png";
 import TabletHerobg from "../images/Tablet/herobg.png";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 function HeroSection() {
   return (
     <>
@@ -17,11 +18,13 @@ function HeroSection() {
               courses and find out the best course for you.
             </Content>
             <Buttons>
-              {/* <Courses>Free Courses</Courses> */}
+              <Link to="courses">
               <CoursesBtn variant="contained">Free Courses</CoursesBtn>
+              </Link>
+              <Link to="/blogs">
               <BlogsBtn variant="contained">Explore Blogs</BlogsBtn>
+              </Link>
 
-              {/* <Blogs>Explore Blogs</Blogs> */}
             </Buttons>
           </ContentBox>
         </ContentWrapper>
@@ -47,6 +50,10 @@ const Wrapper = styled.div`
     background-position: center;
     background-repeat: no-repeat;
   }
+  @media screen and (max-width: 450px) {
+   background: none;
+   height: 450px;
+  }
 `;
 const ContentWrapper = styled.div`
   width: 100%;
@@ -67,6 +74,10 @@ const ContentBox = styled.div`
     margin: 10px 60px;
     width: 550px;
   }
+  @media screen and (max-width: 450px) {
+    width: 400px;
+    margin: 10px;
+  }
 `;
 const Heading = styled.h1`
   font-size: 50px;
@@ -82,6 +93,15 @@ const Heading = styled.h1`
   @media screen and (max-width: 1450px) {
     font-size: 40px;
   }
+  @media screen and (max-width: 450px) {
+   font-size: 25px;
+   display: flex;
+   justify-content:center;
+   p{
+     font-size: 27px;
+     margin-left: 10px;
+   }
+  }
 `;
 const Content = styled.p`
   font-size: 20px;
@@ -91,11 +111,20 @@ const Content = styled.p`
   @media screen and (max-width: 1450px) {
     font-size: 18px;
   }
+  @media screen and (max-width: 450px) {
+   font-size: 15px;
+   line-height: 25px;
+   text-align: center;
+  }
 `;
 
 const Buttons = styled.div`
   display: flex;
   margin-top: 30px;
+  @media screen and (max-width: 450px) {
+   font-size: 20px;
+   justify-content: center;
+  }
 `;
 
 const CoursesBtn = styled(Button)`
