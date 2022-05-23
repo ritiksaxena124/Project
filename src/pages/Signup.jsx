@@ -5,13 +5,15 @@ import { TextField } from "@mui/material";
 import Bg from "../images/Login/bg.png";
 import SignupImg from "../images/Login/signup.jpg";
 
-
 function Signup() {
   return (
     <Container>
       <LoginContainer>
+        <ImageContainer>
+          <Image src={SignupImg} />
+        </ImageContainer>
 
-      <FormContainer>
+        <FormContainer>
           <Heading> Signup </Heading>
           <InputEmail
             fullWidth
@@ -39,11 +41,6 @@ function Signup() {
           />
           <StyledButton variant="contained">Create Account</StyledButton>
         </FormContainer>
-
-        <ImageContainer>
-          <Image src={SignupImg}/>
-        </ImageContainer>
-       
       </LoginContainer>
     </Container>
   );
@@ -56,7 +53,7 @@ const Container = styled.div`
   background-position: center;
   background-attachment: scroll;
   background-repeat: no-repeat;
-  height: calc(100vh - 110px);
+  min-height: calc(100vh - 110px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,6 +64,11 @@ const LoginContainer = styled.div`
   border-radius: 3px;
   background-color: rgba(0, 86, 86, 0.6);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  @media screen and (max-width: 450px) {
+    width: 400px;
+    margin: 10px;
+    flex-direction: column;
+  }
 `;
 const ImageContainer = styled.div`
   flex: 1;

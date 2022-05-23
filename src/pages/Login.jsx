@@ -58,6 +58,12 @@ const LoginContainer = styled.div`
   border-radius: 3px;
   background-color: rgba(0, 86, 86, 0.6);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); ;
+
+  @media screen and (max-width: 450px) {
+    width: 400px;
+    margin: 10px;
+    flex-direction: column;
+  }
 `;
 const ImageContainer = styled.div`
   flex: 1;
