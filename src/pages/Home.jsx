@@ -5,15 +5,19 @@ import DevelopersSection from "../components/DevelopersSection";
 import HeroSection from "../components/HeroSection";
 import TestimonialSection from "../components/TestimonialSection";
 import Bg from "../images/bg.png";
+import { Fade } from "react-awesome-reveal";
+
 function Home() {
   return (
     <>
       <Wrapper>
         <HeroSection />
         <Container>
-          <CoursesSection />
-          <TestimonialSection />
-          <DevelopersSection />
+          <Fade>
+            <CoursesSection />
+            <TestimonialSection />
+            <DevelopersSection />
+          </Fade>
         </Container>
       </Wrapper>
     </>

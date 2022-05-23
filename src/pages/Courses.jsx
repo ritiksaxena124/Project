@@ -8,20 +8,12 @@ function Courses() {
       <Container>
         <Heading>Offered Courses</Heading>
         <CoursesSectionContainer>
-          <CoursesCard />
+          <CoursesCard delay="0" />
+          <CoursesCard delay="50" />
 
-          <CoursesCard />
-          <CoursesCard />
-          <CoursesCard />
-          <CoursesCard />
-          <CoursesCard />
-          <CoursesCard />
-          <CoursesCard />
-          <CoursesCard />
-          <CoursesCard />
-          <CoursesCard />
-          <CoursesCard />
-          <CoursesCard />
+          <CoursesCard delay="100" />
+
+          <CoursesCard delay="150" />
         </CoursesSectionContainer>
       </Container>
     </Wrapper>

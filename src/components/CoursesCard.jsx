@@ -1,21 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
+import { Fade } from "react-awesome-reveal";
 
-function CoursesCard() {
+function CoursesCard({delay}) {
   return (
-    <Wrapper>
-      <Container>
-        <ImageContainer>
-          <Image />
-        </ImageContainer>
-        <Info>
-          <CourseName>Ritik Saxena</CourseName>
-          <Desc>Project Head</Desc>
-          <StyledButton variant="contained">Explore Course</StyledButton>
-        </Info>
-      </Container>
-    </Wrapper>
+    <Fade delay={delay}>
+      <Wrapper>
+        <Container>
+          <ImageContainer>
+            <Image />
+          </ImageContainer>
+          <Info>
+            <CourseName>Ritik Saxena</CourseName>
+            <Desc>Project Head</Desc>
+            <StyledButton variant="contained">Explore Course</StyledButton>
+          </Info>
+        </Container>
+      </Wrapper>
+    </Fade>
   );
 }
 
@@ -23,7 +26,6 @@ export default CoursesCard;
 const Wrapper = styled.div`
   margin: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-
 `;
 const Container = styled.div`
   width: 300px;

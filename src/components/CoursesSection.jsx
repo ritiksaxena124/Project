@@ -31,7 +31,7 @@ const Heading = styled.h2`
   color: #005656;
   font-size: 30px;
   @media screen and (max-width: 450px) {
-   font-size: 25px;
+    font-size: 25px;
   }
 `;
 
