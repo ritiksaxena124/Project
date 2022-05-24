@@ -8,12 +8,14 @@ function Courses() {
       <Container>
         <Heading>Offered Courses</Heading>
         <CoursesSectionContainer>
-          <CoursesCard delay="0" />
-          <CoursesCard delay="50" />
-
-          <CoursesCard delay="100" />
-
-          <CoursesCard delay="150" />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
+          <CoursesCard />
         </CoursesSectionContainer>
       </Container>
     </Wrapper>
@@ -23,7 +25,7 @@ function Courses() {
 export default Courses;
 
 const Wrapper = styled.div`
-  margin-top: 50px;
+ 
   padding: 0px 70px;
   background: url(${Bg});
   background-size: cover;
@@ -46,6 +48,7 @@ const Heading = styled.h2`
   color: #005656;
   font-size: 30px;
   text-transform: capitalize;
+  padding-top: 50px;
 `;
 
 const CoursesSectionContainer = styled.div`

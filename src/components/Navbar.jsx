@@ -3,7 +3,15 @@ import styled from "styled-components";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import MenuBtn from "./MenuBtn";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state";
+
 function Navbar() {
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  const dispatch = useDispatch();
+  const { LoggedOut } = bindActionCreators(actionCreators, dispatch);
   return (
     <>
       <Wrapper>
@@ -12,36 +20,50 @@ function Navbar() {
             <Logo>StudySpace</Logo>
           </Link>
         </LogoContainer>
-        {/* <NavMenuWrapper> */}
-          {/* <NavMenu>
-            <NavMenuItems>
-              <Link to="/">
-                <Items>Home</Items>
-              </Link>
-              <Link to="/courses">
-                <Items>Courses</Items>
-              </Link>
-              <Link to="/blogs">
-                <Items>Blog</Items>
-              </Link>
-              <Link to="/practice">
-                <Items>Practice</Items>
-              </Link>
-              <Link to="/contact">
-                <Items>Contact us</Items>
-              </Link>
-            </NavMenuItems>
-          </NavMenu>
-          <NavButtons>
-            <Link to="login">
-              <LoginBtn>Login</LoginBtn>
+        <NavMenu>
+          <NavMenuItems>
+            <Link to="/">
+              <Items>Home</Items>
             </Link>
-            <Link to="signup">
-              <SignupBtn>Signup</SignupBtn>
+            <Link to="/courses">
+              <Items>Courses</Items>
             </Link>
-          </NavButtons> */}
-          <MenuBtn/>
-        {/* </NavMenuWrapper> */}
+            <Link to="/blogs">
+              <Items>Blog</Items>
+            </Link>
+            <Link to="/practice">
+              <Items>Practice</Items>
+            </Link>
+            <Link to="/contact">
+              <Items>Contact us</Items>
+            </Link>
+          </NavMenuItems>
+        </NavMenu>
+        <NavButtons>
+          {isLoggedIn ? (
+            <>
+              <Link to="login">
+                <SignupBtn
+                  onClick={() => {
+                    LoggedOut();
+                  }}
+                >
+                  Logout
+                </SignupBtn>
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to="login">
+                <LoginBtn>Login</LoginBtn>
+              </Link>
+              <Link to="signup">
+                <SignupBtn>Signup</SignupBtn>
+              </Link>
+            </>
+          )}
+        </NavButtons>
+        <MenuBtn />
       </Wrapper>
     </>
   );
@@ -56,7 +78,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   border-bottom: 1px solid black;
   @media screen and (max-width: 450px) {
-   padding: 15px 10px;
+    padding: 15px 10px;
   }
 `;
 const LogoContainer = styled.div``;
@@ -65,17 +87,15 @@ const Logo = styled.h2`
   font-size: 30px;
   font-weight: 900;
   @media screen and (max-width: 450px) {
-   font-size: 25px;
+    font-size: 25px;
   }
 `;
 
-const NavMenuWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 17px;
+const NavMenu = styled.div`
+  @media screen and (max-width: 968px) {
+    display: none;
+  }
 `;
-
-const NavMenu = styled.div``;
 const NavMenuItems = styled.ul`
   display: flex;
 `;
@@ -87,6 +107,9 @@ const Items = styled.p`
 
 const NavButtons = styled.div`
   display: flex;
+  @media screen and (max-width: 968px) {
+    display: none;
+  }
 `;
 
 const LoginBtn = styled(Button)`

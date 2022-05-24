@@ -4,7 +4,15 @@ import { Link } from "react-router-dom";
 import SS from "../images/SS.png";
 import Button from "@mui/material/Button";
 
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state";
+
 const Sidebar = ({ action }) => {
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  const dispatch = useDispatch();
+  const { LoggedOut } = bindActionCreators(actionCreators, dispatch);
   return (
     <>
       <Container action={action}>
@@ -32,12 +40,28 @@ const Sidebar = ({ action }) => {
             </ItemsList>
           </MenuItemsContainer>
           <NavButtons>
-            <Link to="/login">
-              <LoginBtn>Login</LoginBtn>
-            </Link>
-            <Link to="/signup">
-              <SignupBtn>Signup</SignupBtn>
-            </Link>
+            {isLoggedIn ? (
+              <>
+                <Link to="login">
+                  <LogOutBtn
+                    onClick={() => {
+                      LoggedOut();
+                    }}
+                  >
+                    Logout
+                  </LogOutBtn>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <LoginBtn>Login</LoginBtn>
+                </Link>
+                <Link to="/signup">
+                  <SignupBtn>Signup</SignupBtn>
+                </Link>
+              </>
+            )}
           </NavButtons>
         </LeftSide>
       </Container>
@@ -120,10 +144,10 @@ const LoginBtn = styled(Button)`
   text-transform: none !important;
 `;
 
-const SignupBtn = styled(Button)`
-  font-size: 15px !important;
+const SignupBtn = styled(LoginBtn)`
   background: #9ca3af5e !important;
-  padding: 3px 15px !important;
   color: black !important;
-  text-transform: none !important;
+  margin-right: 0;
 `;
+
+const LogOutBtn = styled(SignupBtn)``;

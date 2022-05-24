@@ -16,7 +16,6 @@ function Blogs() {
 
           <BlogCard />
         </BlogsContainer>
-
       </Container>
     </Wrapper>
   );
@@ -25,7 +24,6 @@ function Blogs() {
 export default Blogs;
 
 const Wrapper = styled.div`
-  margin-top: 50px;
   padding: 0px 70px;
   background: url(${Bg});
   background-size: cover;
@@ -33,8 +31,10 @@ const Wrapper = styled.div`
   background-attachment: fixed;
   background-repeat: no-repeat;
   padding-bottom: 30px;
+  min-height: calc(100vh - 110px);
   @media screen and (max-width: 450px) {
-    padding: 0px 30px;
+    padding: 0px 10px;
+    margin-bottom: 20px;
   }
 `;
 const Container = styled.div``;
@@ -44,6 +44,7 @@ const Heading = styled.h2`
   color: #005656;
   font-size: 30px;
   text-transform: capitalize;
+  padding-top: 50px;
 `;
 
 const BlogsContainer = styled.div`

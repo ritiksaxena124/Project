@@ -21,7 +21,6 @@ function Practice() {
           <PracticeCard />
           <PracticeCard />
           <PracticeCard />
-          <PracticeCard />
         </PracticeSectionContainer>
       </Container>
     </Wrapper>
@@ -31,7 +30,7 @@ function Practice() {
 export default Practice;
 
 const Wrapper = styled.div`
-margin-top: 50px;
+  margin-top: 50px;
   padding: 0px 70px;
   background: url(${Bg});
   background-size: cover;

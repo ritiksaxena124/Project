@@ -33,7 +33,9 @@ const MenuButn = styled.div`
   border-radius: 5px;
   cursor: pointer;
   z-index: 100;
-  @media screen and (max-width: 450px) {
+  display: none;
+  @media screen and (max-width: 968px) {
+    display: block;
    margin: 15px 10px;
   }
 `;

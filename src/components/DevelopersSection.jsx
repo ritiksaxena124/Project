@@ -41,4 +41,13 @@ const DevelopersCardContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+
+  @media screen and (max-width: 800px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+  @media screen and (max-width: 630px) {
+    grid-template-columns: 1fr;
+  }
 `;

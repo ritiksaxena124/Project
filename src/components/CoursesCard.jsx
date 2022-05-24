@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 
 function CoursesCard({delay}) {
   return (
-    <Fade delay={delay}>
+    <Fade triggerOnce>
       <Wrapper>
         <Container>
           <ImageContainer>
@@ -26,6 +26,10 @@ export default CoursesCard;
 const Wrapper = styled.div`
   margin: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease-in-out;
+  &:hover{
+    transform: scale(1.06);
+  }
 `;
 const Container = styled.div`
   width: 300px;

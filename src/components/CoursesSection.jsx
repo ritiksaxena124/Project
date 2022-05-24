@@ -41,4 +41,12 @@ const CoursesSectionContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 800px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+  @media screen and (max-width: 630px) {
+    grid-template-columns: 1fr;
+  }
 `;
