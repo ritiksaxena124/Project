@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Bg from "../images/Desktop/bg.png";
+import Bg from "../images/Login/bg.png";
+
 import Button from "@mui/material/Button";
 import { TextField } from "@mui/material";
 import ContactImg from "../images/Android/contact.png";
@@ -14,18 +15,24 @@ function Contactus() {
         </ImageContainer>
         <Form>
           <Heading>Contact us</Heading>
-          <InputName fullWidth
+          <InputName
+            fullWidth
             id="filled-basic"
             label="Name"
-            variant="filled" />
-          <InputEmail fullWidth
+            variant="filled"
+          />
+          <InputEmail
+            fullWidth
             id="filled-basic"
             label="Email"
-            variant="filled" />
-          <InputMessage fullWidth
+            variant="filled"
+          />
+          <InputMessage
+            fullWidth
             id="filled-basic"
             label="Enter Your Message"
-            variant="filled" />
+            variant="filled"
+          />
           <StyledButton variant="contained">Send</StyledButton>
         </Form>
       </Container>
@@ -54,20 +61,22 @@ const Wrapper = styled.div`
   }
 `;
 const Container = styled.div`
+  width: 1000px;
   display: flex;
   align-items: center;
   background-color: rgba(0, 86, 86, 0.6);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-
+  @media screen and (max-width: 450px) {
+    width: 350px;
+    margin: 10px;
+    flex-direction: column;
+  }
 `;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 400px;
   padding: 10px 50px;
-  @media screen and (max-width: 450px) {
-    width: 350px;
-  }
 `;
 
 const ImageContainer = styled.div`
@@ -92,7 +101,7 @@ const InputName = styled(TextField)`
   margin-top: 15px !important;
   background: #ffff;
   border-radius: 3px;
-  border:none !important;
+  border: none !important;
 `;
 const InputEmail = styled(TextField)`
   margin-top: 15px !important;
@@ -103,7 +112,6 @@ const InputMessage = styled(TextField)`
   margin-top: 15px !important;
   background: #ffff;
   border-radius: 3px;
-
 `;
 
 const StyledButton = styled(Button)`

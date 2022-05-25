@@ -19,12 +19,11 @@ function HeroSection() {
             </Content>
             <Buttons>
               <Link to="courses">
-              <CoursesBtn variant="contained">Free Courses</CoursesBtn>
+                <CoursesBtn variant="contained">Free Courses</CoursesBtn>
               </Link>
               <Link to="/blogs">
-              <BlogsBtn variant="contained">Explore Blogs</BlogsBtn>
+                <BlogsBtn variant="contained">Explore Blogs</BlogsBtn>
               </Link>
-
             </Buttons>
           </ContentBox>
         </ContentWrapper>
@@ -50,9 +49,11 @@ const Wrapper = styled.div`
     background-position: center;
     background-repeat: no-repeat;
   }
+  @media screen and (max-width: 1000px) {
+    background: none;
+  }
   @media screen and (max-width: 450px) {
-   background: none;
-   height: 450px;
+    height: 450px;
   }
 `;
 const ContentWrapper = styled.div`
@@ -60,6 +61,9 @@ const ContentWrapper = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+  @media screen and (max-width: 1000px) {
+    justify-content: center;
+  }
 `;
 const ContentBox = styled.div`
   display: flex;
@@ -74,7 +78,7 @@ const ContentBox = styled.div`
     margin: 10px 60px;
     width: 550px;
   }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 750px) {
     width: 400px;
     margin: 10px;
   }
@@ -93,14 +97,31 @@ const Heading = styled.h1`
   @media screen and (max-width: 1450px) {
     font-size: 40px;
   }
-  @media screen and (max-width: 450px) {
-   font-size: 25px;
-   display: flex;
-   justify-content:center;
-   p{
-     font-size: 27px;
-     margin-left: 10px;
-   }
+  @media screen and (max-width: 1000px) {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    p {
+      font-size: 45px;
+      margin-left: 10px;
+    }
+  }
+  @media screen and (max-width: 756px) {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    p {
+      font-size: 35px;
+      margin-left: 10px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 25px;
+    p {
+      font-size: 27px;
+      margin-left: 10px;
+    }
   }
 `;
 const Content = styled.p`
@@ -111,19 +132,25 @@ const Content = styled.p`
   @media screen and (max-width: 1450px) {
     font-size: 18px;
   }
+  @media screen and (max-width: 1450px) {
+    text-align: center;
+  }
+  
   @media screen and (max-width: 450px) {
-   font-size: 15px;
-   line-height: 25px;
-   text-align: center;
+    font-size: 15px;
+    line-height: 25px;
   }
 `;
 
 const Buttons = styled.div`
   display: flex;
   margin-top: 30px;
+  @media screen and (max-width: 1000px) {
+    justify-content: center;
+  }
+  
   @media screen and (max-width: 450px) {
-   font-size: 20px;
-   justify-content: center;
+    font-size: 20px;
   }
 `;
 

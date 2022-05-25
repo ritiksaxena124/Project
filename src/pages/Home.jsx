@@ -13,7 +13,7 @@ function Home() {
       <Wrapper>
         <HeroSection />
         <Container>
-          <Fade>
+          <Fade triggerOnce>
             <CoursesSection />
             <TestimonialSection />
             <DevelopersSection />
@@ -34,6 +34,9 @@ const Container = styled.div`
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  @media screen and (max-width: 800px) {
+    padding: 0px 30px;
+  }
   @media screen and (max-width: 450px) {
     padding: 0px 10px;
     background: none;

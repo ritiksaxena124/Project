@@ -1,24 +1,34 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "@mui/material/Button";
 import { Fade } from "react-awesome-reveal";
-function DeveloperCard() {
+import { Link } from "react-router-dom";
+
+function PracticeCard() {
   return (
-    <Fade>
+    <Fade triggerOnce>
       <Wrapper>
         <Container>
           <ImageContainer>
             <Image />
           </ImageContainer>
           <Info>
-            <Name>Ritik Saxena</Name>
-            <Designation>Project Head</Designation>
+            <CourseName>React.js</CourseName>
+            <Desc>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga,
+              provident.
+            </Desc>
+            <Link to="rules">
+              <StyledButton variant="contained">Go to Test</StyledButton>
+            </Link>
           </Info>
         </Container>
       </Wrapper>
     </Fade>
   );
 }
-export default DeveloperCard;
+
+export default PracticeCard;
 const Wrapper = styled.div`
   margin: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -46,15 +56,19 @@ const Image = styled.img`
   border-radius: 7px 7px 0px 0px;
 `;
 const Info = styled.div`
-  display: grid;
-  place-items: center;
-  padding: 20px 10px 20px 10px;
+  padding: 20px 15px 15px 15px;
 `;
-const Name = styled.p`
+const CourseName = styled.p`
   font-size: 20px;
   font-weight: bold;
 `;
-const Designation = styled.p`
-  font-size: 15px;
+const Desc = styled.p`
+  font-size: 13px;
   margin-top: 7px;
+`;
+
+const StyledButton = styled(Button)`
+  font-size: 9px !important;
+  background: #0c4d4d !important;
+  margin-top: 10px !important;
 `;

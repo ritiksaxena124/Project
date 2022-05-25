@@ -8,9 +8,11 @@ import Practice from "./pages/Practice";
 import Contactus from "./pages/Contactus";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Sidebar from "./components/Sidebar";
 import { Routes, Route } from "react-router-dom";
 import styled from "styled-components";
+import MockTest from "./pages/MockTest";
+import Rules from "./pages/Rules";
+import Test from "./pages/Test";
 
 function App() {
   return (
@@ -21,15 +23,13 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/blogs" element={<Blogs />} />
-
           <Route path="/practice" element={<Practice />} />
-
           <Route path="/contact" element={<Contactus />} />
-
           <Route path="/login" element={<Login />} />
-
           <Route path="/signup" element={<Signup />} />
-          <Route path="/sidebar" element={<Sidebar />} />
+          <Route path="/test" element={<MockTest/>}/>
+          <Route path="/test/rules" element={<Rules/>}/>
+          <Route path="/test/rules/start-test" element={<Test/>}/>
         </Routes>
       </Wrapper>
       <Footer />

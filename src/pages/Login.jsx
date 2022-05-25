@@ -1,37 +1,88 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
 import { TextField } from "@mui/material";
 import Bg from "../images/Login/bg.png";
 import LoginImg from "../images/Login/login.jpg";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state";
+
 function Login() {
+  const dispatch = useDispatch();
+  const { LoggedIn } = bindActionCreators(actionCreators, dispatch);
+
+  const navigate = useNavigate();
+  const [user, setUser] = useState({ email: "", password: "" });
+  let name, value;
+  const handleInputs = (e) => {
+    name = e.target.name;
+    value = e.target.value;
+    setUser({ ...user, [name]: value });
+  };
+
+  const sendData = async (e) => {
+    e.preventDefault();
+    const { email, password } = user;
+    const res = await fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+
+    const data = await res.json();
+    if (data.status === 422 || data.status === 500 || !data) {
+      window.alert("Login Failure");
+    } else {
+      LoggedIn();
+      window.alert("Login Successful");
+      navigate("/");
+    }
+  };
+
   return (
     <Container>
       <LoginContainer>
         <ImageContainer>
           <Image src={LoginImg} />
         </ImageContainer>
-        <FormContainer>
+        <FormContainer method="POST">
           <Heading> Login </Heading>
           <InputEmail
             fullWidth
             id="filled-basic"
             label="Email"
             variant="filled"
+            name="email"
+            value={user.email}
+            onChange={handleInputs}
           />
           <InputPassword
+            type="password"
             fullWidth
             id="filled-basic"
             label="Password"
             variant="filled"
+            name="password"
+            value={user.password}
+            onChange={handleInputs}
           />
-          <StyledButton variant="contained">Login</StyledButton>
+
+          <StyledButton variant="contained" onClick={sendData}>
+            Login
+          </StyledButton>
 
           <CreateAccount>
             Doesn't have an account?
             <Link to="/signup">
-              <span>Signup</span>
+              <span> Signup</span>
             </Link>
           </CreateAccount>
         </FormContainer>
@@ -47,7 +98,7 @@ const Container = styled.div`
   background-position: center;
   background-attachment: scroll;
   background-repeat: no-repeat;
-  height: calc(100vh - 110px);
+  min-height: calc(100vh - 110px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +108,7 @@ const LoginContainer = styled.div`
   display: flex;
   border-radius: 3px;
   background-color: rgba(0, 86, 86, 0.6);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); ;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
   @media screen and (max-width: 450px) {
     width: 400px;
@@ -76,7 +127,7 @@ const Image = styled.img`
   height: 100%;
   object-fit: cover;
 `;
-const FormContainer = styled.div`
+const FormContainer = styled.form`
   flex: 1;
   display: flex;
   align-items: center;
