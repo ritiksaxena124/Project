@@ -34,6 +34,9 @@ function Navbar() {
             <Link to="/practice">
               <Items>Practice</Items>
             </Link>
+            <Link to="/test">
+              <Items>Mock Test</Items>
+            </Link>
             <Link to="/contact">
               <Items>Contact us</Items>
             </Link>
@@ -42,7 +45,6 @@ function Navbar() {
         <NavButtons>
           {isLoggedIn ? (
             <>
-              <Link to="login">
                 <SignupBtn
                   onClick={() => {
                     LoggedOut();
@@ -50,7 +52,6 @@ function Navbar() {
                 >
                   Logout
                 </SignupBtn>
-              </Link>
             </>
           ) : (
             <>

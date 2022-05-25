@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import SS from "../images/SS.png";
 import Button from "@mui/material/Button";
-
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -42,7 +41,6 @@ const Sidebar = ({ action }) => {
           <NavButtons>
             {isLoggedIn ? (
               <>
-                <Link to="login">
                   <LogOutBtn
                     onClick={() => {
                       LoggedOut();
@@ -50,7 +48,6 @@ const Sidebar = ({ action }) => {
                   >
                     Logout
                   </LogOutBtn>
-                </Link>
               </>
             ) : (
               <>
@@ -75,7 +72,7 @@ const Container = styled.div`
   width: 250px;
   background: #ffff;
   height: 100%;
-  z-index: 100;
+  z-index: 101;
   display: flex;
   justify-content: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);

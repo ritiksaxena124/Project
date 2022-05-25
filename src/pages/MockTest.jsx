@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import PracticeCard from "../components/PracticeCard";
+import MockTestCard from "../components/MockTestCard";
 import Bg from "../images/bg.png";
 import Overlay from "../components/Overlay";
-import card from "../images/practiceCard.png";
 import bg from "../images/mockHerobg.png";
-
+import card from "../images/MT.png";
 import { useSelector } from "react-redux";
 
-function Practice() {
+function MockTest() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   return (
     <Wrapper>
@@ -17,8 +16,11 @@ function Practice() {
           <HeroSection>
             <HeroSectionWrapper>
               <LeftSide>
-                <HeadingMockTest>Practice your Learning Here</HeadingMockTest>
-                <Para>Lets Practice whatever you have learned</Para>
+                <HeadingMockTest>Online Mock Test</HeadingMockTest>
+                <Para>
+                  Practice and Attempt Unlimited Mock Test Series Online to
+                  prepare yourself.
+                </Para>
               </LeftSide>
               <RightSide>
                 <Image src={card}></Image>
@@ -26,21 +28,13 @@ function Practice() {
             </HeroSectionWrapper>
           </HeroSection>
           <Container>
-            <Heading>Practice your learnings</Heading>
+            <Heading>Choose Your Mock Test</Heading>
             <PracticeSectionContainer>
-              <PracticeCard />
-
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
+              <MockTestCard />
+              <MockTestCard />
+              <MockTestCard />
+              <MockTestCard />
+              <MockTestCard />
             </PracticeSectionContainer>
           </Container>
         </>
@@ -50,8 +44,11 @@ function Practice() {
           <HeroSection>
             <HeroSectionWrapper>
               <LeftSide>
-                <HeadingMockTest>Practice your Learning Here</HeadingMockTest>
-                <Para>Lets Practice whatever you have learned</Para>
+                <HeadingMockTest>Online Mock Test</HeadingMockTest>
+                <Para>
+                  Practice and Attempt Unlimited Mock Test Series Online to
+                  prepare yourself.
+                </Para>
               </LeftSide>
               <RightSide>
                 <Image src={card}></Image>
@@ -59,17 +56,12 @@ function Practice() {
             </HeroSectionWrapper>
           </HeroSection>
           <Container>
-            <Heading>Practice your learnings</Heading>
+            <Heading>Choose Your Mock test</Heading>
             <PracticeSectionContainer>
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
-              <PracticeCard />
+              <MockTestCard />
+              <MockTestCard />
+              <MockTestCard />
+              <MockTestCard />
             </PracticeSectionContainer>
           </Container>
         </>
@@ -78,7 +70,7 @@ function Practice() {
   );
 }
 
-export default Practice;
+export default MockTest;
 
 const Wrapper = styled.div`
   background: url(${Bg});
@@ -88,12 +80,12 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
 `;
 const Container = styled.div`
-  padding: 50x 70px 30px 70px;
+  padding-top: 50px;
+  padding: 50px 70px 30px 70px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-bottom: 30px;
 `;
 
 const Heading = styled.h2`
@@ -126,6 +118,8 @@ const PracticeSectionContainer = styled.div`
     grid-gap: 7px;
   }
 `;
+
+// HERO SECTION STYLING
 const HeroSection = styled.div`
   height: 500px;
   width: 100%;

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Bg from "../images/Desktop/bg.png";
+import Bg from "../images/Login/bg.png";
+
 import Button from "@mui/material/Button";
 import { TextField } from "@mui/material";
 import ContactImg from "../images/Android/contact.png";
@@ -60,6 +61,7 @@ const Wrapper = styled.div`
   }
 `;
 const Container = styled.div`
+  width: 1000px;
   display: flex;
   align-items: center;
   background-color: rgba(0, 86, 86, 0.6);
